@@ -1,0 +1,21 @@
+
+
+spring:
+  application:
+    name:microservicea:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8080/realms/prem_realm
+          jwt-set-uri: ${spring.security.oauth2.resourceserver.issuer-uri}/protocol/openid-connect/certs
+
+server:
+  port: 8081
+
+jwt:
+  auth:
+    converter:
+      principle-attribute: preferred_username
+      resource-id: micrservicea_client
+
