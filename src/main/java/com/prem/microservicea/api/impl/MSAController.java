@@ -20,4 +20,9 @@ public class MSAController {
     public String sayHello2() {
         return "I'm MicroServiceA - Admin";
     }
+
+    @GetMapping("hello3")
+    public String sayHello3() {
+        return "I'm MicroServiceA (Accessed thru client secret token))";
+    }
 }
